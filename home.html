@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123249624-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-123249624-1');
+</script>
+
+<title>Nokiye - Search For Fake News Reports</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" >
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Search for Fact Checking Reports About A Topic, Place, Entity or Individual">
+<meta name="author" content="Check4Spam">
+<meta property="og:image" content="https://nokiye.com/images/logo.png" />
+<meta property="og:url" content="https://nokiye.com/" />
+<meta property="og:type" content="search" />
+<meta property="og:title" content="Nokiye - Search For Fake News Reports" />
+<meta property="og:description" content="Search for fact check reports on a topic or subject" />
+<link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+<link rel="shortcut icon" type="image/png" href="https://nokiye.com/favicon.png"/>
+<style type="text/css">
+body {
+  /*background: linear-gradient(90deg, white, gray);*/
+  background-color: #eee;
+}
+
+body, h1, p {
+  font-family: "Helvetica Neue", "Segoe UI", Segoe, Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.container {
+  margin-left:  auto;
+  margin-right:  auto;
+  margin-top: 50px;
+  max-width: 1170px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.row:before, .row:after {
+  display: table;
+  content: " ";
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 300;
+  margin: 0 0 0px 0;
+  text-align: left;
+}
+
+.lead {
+  font-size: 21px;
+  font-weight: 200;
+  margin-bottom: 20px;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+a {
+  color: #3282e6;
+  text-decoration: none;
+}
+
+.TextInput { 
+x: 77px; 
+y: 294px; 
+width: 75%; 
+height: 42px; 
+color: #000000; 
+font-family: 'Tahoma'; 
+font-size: 16px; 
+font-weight: normal; 
+font-style: normal; 
+text-decoration: none; 
+text-align: left; 
+align: center;
+padding: 5px; 
+background: #FFFFFF; 
+border: 1px solid #CCCCCC; 
+border-radius: 5px; 
+box-shadow: 1px 1px 5px grey;
+}
+
+.Button { 
+x: 459px; 
+y: 304px; 
+width: auto; 
+height: 40px; 
+color: grey; 
+font-family: 'Tahoma'; 
+font-size: 12px; 
+font-weight: normal; 
+font-style: normal; 
+text-decoration: none; 
+text-align: center; 
+background: light grey; 
+border: 1px solid #DDDDDD; 
+border-radius: 3px; 
+}
+
+.Button:hover {
+color: #000000; 
+box-shadow: 1px 1px 1px grey;
+border: 1px solid grey; 
+
+}
+.divclr, .divsug { 
+  margin-left:  auto;
+  margin-right:  auto;
+  x: 77px; 
+  y: 294px; 
+  width: 75%; 
+  height: 15px; 
+  color: #000000; 
+  font-family: 'Monospace'; 
+  font-size: 12px; 
+  font-weight: normal; 
+  font-style: normal; 
+  text-decoration: none; 
+  text-align: right; 
+  padding: 5px; 
+  border: 0; 
+}
+td1 {
+  align: left;
+  width: 60%;
+}
+
+td2 {
+  align: right;
+  width: 10%;
+}
+
+.myHeader {
+  text-align: center;
+  width:100%;
+  margin:10 auto;
+  align: middle;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right:auto;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container text-center" id="error">
+<p style="float:center;"><a href="/"><img src="images/header.png" style="width:50%;height:50%;"></a></p>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="main-icon text-success"><span class="uxicon uxicon-clock-refresh"></span></div>
+      <h4 style="align:center; color:#2696A1; font-size:1;">Search For Fact Checking Reports</h4>
+      <script>
+        (function() {
+           var cx = '011505827364838494261:1_y3cde8hyq';
+           var gcse = document.createElement('script');
+           gcse.type = 'text/javascript';
+           gcse.async = true;
+           gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+           var s = document.getElementsByTagName('script')[0];
+           s.parentNode.insertBefore(gcse, s);
+         })();
+       </script>
+<!--       <gcse:searchbox></gcse:searchbox> -->
+    </div>
+  </div>
+
+
+<form id="myForm" autocomplete="off">
+<input class="TextInput" id="inputtext" placeholder="Type or Paste Topic Here ..." type="text">
+<input class="TextInput" id="inputtextnew" placeholder="Type or Paste Topic Here ..." type="text" list="articles" style="display:none;">
+</form>
+<datalist id="articles">
+  <option value="Bangalore, 30 Years Female (10 Feb 2015)">
+  <option value="Missing Kid, KIMS Bangalore">
+  <option value="Missing Male, 75 Years, Bangalore (since 7th Jan 2015)">
+  <option value="Dimpy Das (A blood cancer patient) is in need of Blood donors, Bangalore, March 2015">
+  <option value="75 BE computers candidates with or without experience for IBM, August 2015">
+  <option value="Need 50 Mechanical engineers with or without experience for HARIHAR ALLOYS">
+  <option value="Blood Required for Kollam victims">
+  <option value="30 Mechanical diploma candidates with or without experience for BOSCH Pune">
+  <option value="WhatsApp Profile Viewer Information">
+  <option value="Free LED TV from Amazon">
+  <option value="Facebook is celebrating its Birthday">
+  <option value="Network Engg vacancy in DXB">
+  <option value="Cognizant opening for physically challenged">
+  <option value="Fresher jobs in Mindfiresolutions">
+  <option value="Bus drivers (Dubai Government RTA)">
+  <option value="Email IDs of 40 companies for job application in Saudi Arabia">
+  <option value="Jayadeva Hospital Bangalore is conducting free Angioplasty">
+  <option value="Bank Account hijack">
+  <option value="JP Morgan Chase Opening, Bangalore">
+  <option value="looking for min 4 years experienced sql server admin for a company in Qatar">
+  <option value="Vava Suresh Summer Message">
+  <option value="Recharge - Digital India Scheme">
+  <option value="Missing Girl From Chattisgarh">
+  <option value="Etisalat C programming opening">
+  <option value="WhatsApp Gold ( goldenversion.com )">
+  <option value="Need urgently 275 BE computers candidates with or without experience for wipro pune location">
+  <option value="WhatsApp logo should turn blue">
+  <option value="Avani, who was found alone at the Nagpur railway station">
+  <option value="freemobilephonecase.com">
+  <option value="tiny.cc/mobilenumbertracker-app">
+  <option value="Freshers opening in Nokia for btech and mtech 2015,2016 passout">
+  <option value="Its name is EL Nino cyclone. There is a chance for 250 cm rain. Chances are there nearly the entire Chennai">
+  <option value="CHANGES IN INDIAN RAILWAY/ IRCTC PASSENGER RESERVATION SYSTEM">
+  <option value="There is an app called talking angela, this app asks kids personal questions like their names">
+  <option value="Missing Kid From Amreli Dhasa">
+  <option value="Sadia Banu, 7Yrs Missing">
+  <option value="amazon.mobile-flashsale.com">
+  <option value="Unique code for all autos in Bangalore">
+  <option value="Nestle is asking for everyone to return all BANANA BABY FOOD expiring 2017">
+  <option value="Need 10 civil engineers urgently in Qatar Rail project 10,000 QR salary">
+  <option value="Pujita 13 years old missing from Bangalore">
+  <option value="Adishree Dutta 7 years old kidnapped at Jayanagar Bangalore">
+  <option value="New air conditioned auto rickshaw">
+  <option value="IMITINEF MERCILET - Medicine for BLOOD CANCER">
+  <option value="O-ve blood for a 8 yr boy admitted at Zulekha Pediatric ICU, Dubai">
+  <option value="Need 35 civil/mechanical/electrical engineers urgently in Etihad Rail project">
+  <option value="Melatonin protects the body from cancer">
+  <option value="Syed Umar, Syed Aamir Kids Missing from Bangalore">
+  <option value="Parle-G poster Girl Niru Deshpande">
+  <option value="Sonu Subash Chandran missing from Mangalore">
+  <option value="amazonFestival.TK">
+  <option value="A baby needs AB -ve blood immediately">
+  <option value="Whatsapp launches Ultra-Light Wifi Feature ultra-wifi-activation.ga">
+  <option value="Kiran Kumar suffering from brain failure">
+  <option value="Christopher Nolan was inspired by Punjabi House for the Inception concept">
+  <option value="Bangalore Petrol Pumps will be closed for the next 3 days">
+  <option value="Unnikrishnan missing from Horamavu since 14 Sep 2016">
+  <option value="Mr. Janardhana Bhat at Victoria Hospital Bangalore">
+  <option value="Mega Bora Missing from Chennai since 14 Sep 2016">
+  <option value="Remove WhatsApp Profile Pic for ISIS scare">
+  <option value="Missing Tanya Malik Since September 2016">
+  <option value="Prajith Studying in 7th STD Missing from Kochi">
+  <option value="Anil Aravindan missing since Sept 18 2016 from Chalakudy">
+  <option value="Dance of the Hillary video will format your mobile">
+  <option value="India at night during Diwali by NASA">
+  <option value="CBS reporter claiming that Hillary Clinton was dropping out of the presidential race">
+  <option value="PM Modi asks to boycott WhatsApp and start using Telegram as part of Make In India">
+  <option value="NGO Prerana supported by Infosys provide financial help to 10th standard students with poor financial backgroud">
+  <option value="A 10 year old boy had eaten pineapple and got AIDS">
+  <option value="Dileep and Kavya getting married on the 16th">
+  <option value="CHILDLINE 1098 will come and collect food">
+  <option value="Jana Gana Mana is declared by UNESCO as the BEST ANTHEM OF THE WORLD">
+  <option value="WhatsApp to be banned in India from 31st December 2016, Use VihanApp instead">
+  <option value="New Rupees 2000 note has a NGC Chip">
+  <option value="WIKI LEAKS Published List of Indian black money holders in SWISS bank">
+  <option value="Digital lockers to replace bank lockers">
+  <option value="Narendra Modi is giving Rs 400 as talk time">
+  <option value="If there is any planned marriage in any family they can approach SP">
+  <option value="Sayali Kamath missing from Bangalore since 11 November 2016">
+  <option value="Layeeq Baig 13 year old missing from Bangalore since 14 Nov 2016">
+  <option value="videocalls-whatsapp[dot]net to activate whatsapp video call">
+  <option value="Whatsapp celebrating 10 years by giving exciting prizes!">
+  <option value="NARENDRA D. MODI is now declared as the BEST PM OF THE WORLD by UNESCO">
+  <option value="Banks will not accept if anything is written on the notes">
+  <option value="UNESCO declares rupees 2000 note as best currency of the world">
+  <option value="E-Property Pass Book (EPPB)">
+  <option value="children found in Indore Patna express Accident">
+  <option value="JIO Bill delivered at customer address in Aadhaar Card">
+  <option value="RBI Governor Urijit Patels wife is Nita Ambanis Sister">
+  <option value="JIO Welcome Offers and Other Recharge Offers">
+  <option value="PM Modi Announces Demonetization Compensation Free Paytm Cash">
+  <option value="Indian citizens to pay tax for their worldwide income">
+  <option value="Micromax launched Canvas 5 lite for Rs. 259">
+  <option value="40 Thousand Crores seized from Tamil Nadu Ministers House">
+  <option value="BJP MP Harsh Vardhan beaten up at Delhi ATM">
+  <option value="Modi Keynote App to verify Rs. 2000 note">
+  <option value="Dilip Prabhavalkar passed away on 27th Nov 2016">
+  <option value="Patanjali Big Sale patanjali-sale.in">
+  <option value="Modi Ji New Offer Free Data">
+  <option value="Use WhatsApp Without Internet">
+  <option value="Over usage of user names on WhatsApp, your account may be deleted">
+  <option value="Amazon Big Billion Day Offer amazon.125xc.com">
+  <option value="Arvind Kejriwal as IIT Student accused in rape case">
+  <option value="iPhone 5s Black Friday Sale Just Rs. 649">
+  <option value="125,000 retired Income Tax officers have been recalled by Modi">
+  <option value="From 1st January 2017 Petrol Rs 35">
+  <option value="Amazon Fashion Sale">
+  <option value="Arvind Kejriwal Burning Rs. 2000 Note">
+  <option value="Redmi note 3 sale at 199rs">
+  <option value="Terrorist Attack on Hotel Chandra Inn Jodhpur - Terrorist Arrested">
+  <option value="New tax rates will be implemented from 1 Jan 2017">
+  <option value="Man eating animal caught at Kerala Karnataka border">
+  <option value="Color Shredding security feature of Rs. 2000 currency note">
+  <option value="Konark temple, Sun rise from inside the temple">
+  <option value="Colombia Air crash that killed football team from Brazil shot by driver in car">
+  <option value="Chief Minister Jayalalitha photo at Apollo Hospital November 2016">
+  <option value="Rare picture of Narendra Modi with his mother">
+  <option value="WhatsApp 4G VIP Released">
+  <option value="Woman delivers 11 babies">
+  <option value="Ravi Varmas Lady with the Lamp model at age 86">
+  <option value="BSNL 4G ExPress SIM Launched">
+  <option value="Gold Pan Card and Gold Account">
+  <option value="LOOT OFFER FOR ALL AIRTEL USER">
+  <option value="Jayalalitha dead (fake pictures)">
+  <option value="20 thousand crores caught from Sudhir Gadgils Car">
+  <option value="Reliance 4G sim Free 40 GB Data for 60 days">
+  <option value="JIO Free 1 Year Extender Scam">
+  <option value="Apple Big Sale iPhone 5s for Rs. 499">
+  <option value="Mitron Awarded Oxford Dictionary Word of the Year by UNESCO">
+  <option value="Men Shortage Eritrea Govt Forces Men to Marry Two">
+  <option value="Jayalalithas Poes Garden Residence Pictures">
+  <option value="Cashless Indias 1st Step by Modiji">
+  <option value="Amazon Big Discount Day Offer">
+  <option value="Modi Govt gave contract of printing note to De La Rue">
+  <option value="Jayalalithaas Daughter Shobana or Vedha">
+  <option value="Audio of Mr. Devaraja Reddy President ICAI">
+  <option value="Manju Warrier converts to Islam name is Maimuuna">
+  <option value="Amazon.mobile-flashsale.in-scam">
+  <option value="After 15 Dec Banks Will Not Accept Old Notes">
+  <option value="Shankupushpam at Mysore Palace">
+  <option value="Axis Bank to loose its license">
+  <option value="Jayalalithass Car Collection Hobby">
+  <option value="Kids beaten at Beharampur Milia International Boarding School">
+  <option value="Indias Big Bumper Offer 2016 - 2017 Win Honda Activa">
+  <option value="New 1000 note from 1st Jan 2017, 2000 note will be invalid">
+  <option value="Radioactive Ink used on Rs. 2000 note">
+  <option value="Amazon Christmas Gifts">
+  <option value="Jayalalithaa Apollo Bill Shocks TN Govt">
+  <option value="Fake Cabbages made in Japan">
+  <option value="Mark Tully on Modi">
+  <option value="All India Police notification termed Cyber Crime">
+  <option value="Dog Meat used at Hotel Shah Ghouse">
+  <option value="New Rupees 1000 Note Specimen">
+  <option value="Moto G4 Plus Mobile at 499 Rs from Amazon">
+  <option value="New Amendment to exempt Political Parties from Income Tax">
+  <option value="Old notes can be deposited only once in amount of 5000">
+  <option value="Reliance Buys WhatsApp">
+  <option value="Gita Press Gorakhpur is about to close">
+  <option value="Upgrade Jio Internet Before 31st December 2016">
+  <option value="AUSTAL Boat from Mumbai to Goa">
+  <option value="Pakistan destroying truck loads of Indian Fake Currency">
+  <option value="Free Rs. 500 Balance for Every Indian">
+  <option value="Reliance LYF is available in Rupees 199">
+  <option value="Free Data and Voice Call from Airtel Vodafone Idea till Dec 2017">
+  <option value="Rs. 13000 Crores seized at RK Marbles in IT raid">
+  <option value="A call from 777888999 will kill you">
+  <option value="Indias Economy Surpasses That Of Great Britain">
+  <option value="Britney Spears is dead by accident">
+  <option value="Shivaji Statue will be of Solar Cells and has RUPAR Technology">
+  <option value="online-flash-sale.in">
+  <option value="recharge-on-survey.com">
+  <option value="Doctors Should have Swipe Machine">
+  <option value="Worlds First Head Transplant done at South Africa">
+  <option value="Mark Zuckerberg to give away 4.5 million of his FB stock">
+  <option value="Salim Khan has 4 sons: Salman, Sohail, Arbaaz and Rajesh">
+  <option value="chatsim.co.in">
+  <option value="She is Blind WhatsApp will pay per share">
+  <option value="Amazon New Year Dhamaka Redmi Note 3 for Rs 459">
+  <option value="America Fears Modi said Julian Assange">
+  <option value="Angiography for Rs. 5000 at J. J. Hospital Mumbai">
+  <option value="GIF Images Are Dangerous">
+  <option value="Dawoods assets worth 15,000 crore seized in UAE">
+  <option value="Lady Flower from Lenogav Forests of Thailand">
+  <option value="Free Hajj Offer by Muhammad Nation Group">
+  <option value="Google Internet For Everyone (IFE) Project">
+  <option value="Reverse ATM Pin Calls Police">
+  <option value="paid-survey.in">
+  <option value="New Law Passed Indian Penal Code (IPC) Section 233">
+  <option value="You cannot transact with Paytm Wallet Money after Jan 15th">
+  <option value="Buffalo Fish Found at Pandharpur River">
+  <option value="Fruits with red weird color is blood with AIDS Virus">
+  <option value="Apollo Doctor said Jayalalithaa died on 22nd September 2016">
+  <option value="Cosmic Rays Turn off Phone and Mobile">
+  <option value="Contact Lens Worn Out Near Fire or Cooking">
+  <option value="Koneswaram Kovil at Tirikonamalai Srilanka">
+  <option value="8th Wonder 28 Members Same Face in Family">
+  <option value="USA and CANADA saw two Suns (Hunters Moon)">
+  <option value="Mohanlal and Naseeruddin Shah in Time Magazine Top 15 Versatile Actors">
+  <option value="Gold Reserves - HOW CURRENCY VALUE CHANGES?">
+  <option value="The Oldest Living Language in the World is Kannada">
+  <option value="Indian Mainstream Media (NDTV, TOI, The Hindu,...) Ownership">
+  <option value="Nagapushpa from the Valleys of Himalayas">
+  <option value="Railway Platform Ticket Price is Rs. 20">
+  <option value="Reliance Launching Cab Services in Mumbai on 26th Jan 2017">
+  <option value="Dr. Ambedkar Picture at President Putins Office">
+  <option value="Hijack at Surat Bus Station Terrorists Arrested">
+  <option value="Freedom 251 Mobile Sale">
+  <option value="Ebola Virus has started spreading in Mumbai">
+  <option value="INDIA | Independent Nation Declared In August">
+  <option value="Machupo Virus in P500 Paracetamol">
+  <option value="MR-VAC Injection Is Slow Poison">
+  <option value="Tomato Ketchup Is Made of Blood, Urine, Cocaine and Nutmeg">
+  <option value="UNESCO Declares Jallikattu Bull As World Heritage Symbol">
+  <option value="Undigested Noodles In Intestine">
+  <option value="Airtel Offering Free 3 Months 3G/4G Internet Data">
+  <option value="Alina Chakravorty 12 Year Girl Missing From Powai">
+  <option value="Tamil Announced as Third National Language of Australia">
+  <option value="Panadol or Paracetamol Stays In Human Body For 5 Years">
+  <option value="Iphone 8 Free For Beta Testing">
+  <option value="Driver Kidnaps Kid In Owners Innova">
+  <option value="Bhagat Singh, Sukhdev and Rajguru Were Hanged On 14th February 1931">
+  <option value="MJC and IQSA Has Withdrawn Certification of McDonalds, KFC, Dominos & Pizza Hut">
+  <option value="SSKV School Bus Accident AB-ve Blood Required">
+  <option value="7D Park Japan You Can Touch, Feel & Smell Animals">
+  <option value="TN Governor Invites People to Write To Him About Government Formation">
+  <option value="Uber Launching AC Auto Rikshaw in Mumbai">
+  <option value="Free Service From medisensehealth.com">
+  <option value="Natural therapy for opening the veins of the heart by Dr. S. Vikineswary">
+  <option value="Missing Kid at Ganga Nagar Police Station">
+  <option value="HR 12 8687 Ritz Car Kidnapped 10th Class Girl">
+  <option value="Ronald Opus Suicide A True Story Reported by Kurt Westervelt">
+  <option value="Plastic Rice And Its Brands">
+  <option value="Man Dies After Consuming Egg and Sweet Banana">
+  <option value="Farida Jalal is Dead">
+  <option value="Eagle Snatches Kid At Park">
+  <option value="RBI Allows Deposit of 500 and 1000 Notes from 29th to 31st Of This Month">
+  <option value="Finger Caps for Bogus Voting in UP Polls Caught By EC">
+  <option value="Use Aadhaar Card For Vote If Not In Voting List">
+  <option value="SMS Taxi or Auto Number to 9969777888 To Track Vehicle">
+  <option value="China Glass Bridge Collapses">
+  <option value="Burning Camphor & Cardamon Kills Swine Flu">
+  <option value="New Motor Vehicle Act passed on 21 February 2017">
+  <option value="Container With Kids Found By Tamil Nadu Police">
+  <option value="Trending Spam/Hoax for Jan, 2017">
+  <option value="Amazon Lowest Price Sale Buy Redmi Note 4 Mobile at Rs 1299">
+  <option value="Call From 13 Digit Number Phone Will Explode">
+  <option value="Piya Tose Naina Lage Re Was Written for Devdas">
+  <option value="Deepthi Missing From Coimbatore Since 22nd Feb 2017">
+  <option value="Trending Spam/Hoax for Feb, 2017">
+  <option value="Cadbury Dairy Milk Has Pork Ingredients">
+  <option value="Hyderabad Police Ebola Alert Dont Drink Contaminated Maaza Coke Pepsi">
+  <option value="Protest and Call For April 06, 2017 As No Transaction Day With Banks">
+  <option value="Pope Francis Dies At 80 Following Cardiac Arrest">
+  <option value="UNESCO Declares Das Lakshan The Best Festival Of The World">
+  <option value="UNO Warns Modi For His Speech">
+  <option value="Activate JIO Prime Membership Free For Today Only">
+  <option value="Original Photo of Shahrukh Khan Without Wig">
+  <option value="Picture of Donald Trump Suffering From Stroke Will Destroy Your Computer or Phone">
+  <option value="Vaccine Against Diabetes Has Been Officially Announced">
+  <option value="Onions Absorb Bacteria & Left Over Onions Are Poisonous">
+  <option value="FREE WHATSAPP">
+  <option value="Woman Shaped Fruit Grown At Himalayas">
+  <option value="JIO Sim Unlimited Data With Extra One Year Validity Free">
+  <option value="Three Half Minute Practice To Avoid Sudden Death When You Wake Up At Night">
+  <option value="SMS 96000 97000 For Blood In India">
+  <option value="Key Chains With Inbuilt Tracking Device Sold At Airport">
+  <option value="Fake 10 Rupee Coins How To Identify">
+  <option value="Scholarship By Modi In The Name of Kalam and Vajpayee">
+  <option value="Guy Captured Video On Cell Phone at Kruger National Park Sold to Nat Geo for One Million Dollars">
+  <option value="Message From Mumbai NBFC About PM Modis New Employment Rules">
+  <option value="Template Post">
+  <option value="A bridge on The Sea At Ecuador">
+  <option value="Top 10 Corrupt Political Parties in The World 2017 by BBC">
+  <option value="LRG School Bus Accident AB-ve Blood Required">
+  <option value="High Bone Fever by Drinking Water Packets">
+  <option value="Tej Bahadur Found Dead In His Unit">
+  <option value="Color coding at Toothpastes">
+  <option value="OLA Is Not Safe Rahul Bose Wife Incident">
+  <option value="ayodhya-issue.gov-up.in | Ayodhya Issue Govt Online Poll">
+  <option value="Ebola Reaches Karnataka">
+  <option value="Containers of Fake Currency Caught at Nhava Sheva Port">
+  <option value="DINSHAWS Won Lawsuit Against Kwality Walls">
+  <option value="101 Year Old Lady Gave Birth To Baby Girl">
+  <option value="Movie Piper Won Oscar for Best Animation Short Film">
+  <option value="Free Hindu Calendar at hindu-calendar.in">
+  <option value="Unlimited 4G, 3G data for 3 months | Loot Offer From Vodafone, Idea">
+  <option value="UNESCO Declares Idly The Healthiest Breakfast of The World">
+  <option value="Sonia Disowns Rahul Video Will Format Your Mobile">
+  <option value="Yellow Cartoon Picture Is Trap By Terrorist Organization">
+  <option value="Get Train Tickets Inside Trains | New Railway Facility">
+  <option value="Mumbai, Pune Municipal Corporation Has Issued RED Alert For 3 Days">
+  <option value="Dont Fill Petrol Full Tank During Summer">
+  <option value="Vivo IPL Free T-Shirt">
+  <option value="15 Se 20 Logo Ki Toli Aayi Hai Aur Unke Paas Hathiyar Bi Hai">
+  <option value="Surat Municipal Corporation Has Issued RED Alert For 3 Days">
+  <option value="VMSS Has Issued RED Alert For 3 Days">
+  <option value="Ahmedabad Municipal Corporation Has Issued RED Alert For 3 Days">
+  <option value="UP Government Starts WhatsApp Number 9454404444 For Online Complaints">
+  <option value="UAE Announces 15% Income Tax and 6% Remittance Tax for Expats from Jan 2018">
+  <option value="Trending Spam/Hoax for Mar, 2017">
+  <option value="Rupees 2000 Note To Be Banned on 26th April 2017">
+  <option value="RBI Releases New Currency Notes of Rs. 1000, 50 and 20">
+  <option value="32GB Pendrive In ??37 Only">
+  <option value="Rs. 8000 Fee & BS4 Kit Announced For Discounted BS3 Vehicles">
+  <option value="Extra Marks If You Have Appeared for Elementary and Intermediate Grade Exams">
+  <option value="Shiv Mandir Opens In Sambhal, UP After 35 years">
+  <option value="Cancer Update from Johns Hopkins">
+  <option value="Bird Named Hikku From The Himalayas">
+  <option value="Picture Of Full Pink Moon 11th April 2017">
+  <option value="UP Government Announces Helpline Numbers To Aid Students For Fees and Books">
+  <option value="Vinod Khanna Expired (6th April 2017)">
+  <option value="Decision of Ministry of Interior New Communication Regulations">
+  <option value="Ants Found In The Brain">
+  <option value="Banks Will Remain Closed Every Saturday From 1st June 2017">
+  <option value="WhatsApp Group Firdaus We Ascend Belong to Daesh">
+  <option value="Cell Phone Safety Presentation from L&T">
+  <option value="5 Days Week Approved For LIC Effective May 2017">
+  <option value="Cooking Pop Corn With Mobile Phone">
+  <option value="MGM Logo Lion Had Killed Its Trainer And Assistants">
+  <option value="Unani Hamdard Doesnt Allow Non-Muslim Staff">
+  <option value="Driving Skills Test To Qualify As US Presidents Driver">
+  <option value="Plastic Egg or Chinese Egg In Circulation At India">
+  <option value="Snapchat CEO Evan Spiegel Said App Not For Poor Countries Like India and Spain">
+  <option value="Foreign Lady Beaten For Moving Cow">
+  <option value="One Ring & Hang-up From +375, +371, +381 Numbers">
+  <option value="Giant Skeleton of Goliath Found at Jerusalem">
+  <option value="Qatari Woman Enters Guinness Records for Most Expensive Smile">
+  <option value="TamilNadu Government Has Issued RED Alert For 3 Days">
+  <option value="Heart Donor Available Contact Nupur Bobde">
+  <option value="Green Moon on April 20th 2017">
+  <option value="LARK Program Ajit Doval Reply to Arundhati Roy">
+  <option value="North Korea Missile Launch Failure Video">
+  <option value="India is The Richest Country In The World">
+  <option value="Delhi Government Has Issued RED Alert For 3 Days">
+  <option value="In Africa You Can Dig-Out a Live Fish Called Lung Fish">
+  <option value="Sir Means Slave I Remain">
+  <option value="Ladli Foundation Will Give 1 Lakh Shagun And Will Bear Wedding Expenses">
+  <option value="Reliance JIO DTH Finally Launched Today">
+  <option value="Burj Khalifa Gets Ambedkar Picture On 14 April 2017">
+  <option value="Eddie Murphy Actor And Comedian, Dies At 54">
+  <option value="Internet Speed At NASA is 91 GBPS">
+  <option value="Ray-Ban One Day Sale | rbarab Ray-Ban Official Site-Arab">
+  <option value="Instagram Has Been Banned in India">
+  <option value="Dog Meat Used at Biryani House Kanpur">
+  <option value="Redmi Note4 For Rupees 499 Only">
+  <option value="Free 500 Balance | 500-Recharge.xyz">
+  <option value="Ramdev Baba Dies In An Accident On Pune Mumbai Highway">
+  <option value="Death By Drinking Coke After Eating Mango">
+  <option value="Kids Die Due to Drinking Milk In Fridge Poisoned By Snake">
+  <option value="Win 2 Free Emirates Tickets | flyemnow.com">
+  <option value="Holland Film 786 Makes Fun of Prophet Muhammad">
+  <option value="It Rained Fish In Thailand">
+  <option value="Dawood Ibrahim Dies of Massive Heart Attack">
+  <option value="ISIS Spreading AIDS virus By Injections Like Insulin">
+  <option value="Leopards On NICE Road Bangalore">
+  <option value="Clouds Fell on Earth In Morocco">
+  <option value="Bahubali Hero Prabhas Donates 120 Crores to Soldiers">
+  <option value="Queen Elizabeth II is Dead">
+  <option value="Mildred Honor and Her Piano Pupil Robby">
+  <option value="Trending Spam/Hoax for Apr, 2017">
+  <option value="Petrol Pumps Closed On Sundays From 14th. May 2017">
+  <option value="Air India Domestic Flights at Half Price for Senior Citizens">
+  <option value="RBI Directs Banks to Close ATM Till Software is Updated">
+  <option value="WannaCry/WannaCrypt Ransomware">
+  <option value="Ransomware File Made WhatsApp Compatible">
+  <option value="NASA just confirmed theory of multiverse">
+  <option value="Ghost Found at Ghazipur District">
+  <option value="Floating Rock In Jerusalem">
+  <option value="Sundar Pitchai Quotes">
+  <option value="Mohammed Afroz 5th Accused of Nirbhaya Case">
+  <option value="Cow With World Map On Its Body">
+  <option value="WhatsApp Group Interschools Belong to Daesh">
+  <option value="WhatsApp Group Movies Junction Belongs To ISIS">
+  <option value="Pin Prick At Movie Theaters To Infect HIV Virus">
+  <option value="Corona Virus On Dates | Health Ministry Warning">
+  <option value="Big Public Sector Banks Are Going To Collapse in July">
+  <option value="Pranav Dhanwade Rejected Arjun Tendulkar Selected">
+  <option value="Tallest Man on Earth | Anwar Sadiq 10ft 9in">
+  <option value="Proposed IT Slab Rates by CBDT For Year (2017-18)">
+  <option value="Indian Army Jawans on Branch Top in Kashmir Valley">
+  <option value="Cough Vigorously To Survive A Heart Attack When Alone">
+  <option value="New Killer Insect Sighted in India">
+  <option value="Cloning Car Lock Security Code">
+  <option value="Shah Rukh Khan is Dead">
+  <option value="Chelation Therapy For Heart Blockage">
+  <option value="Eye Cancer Due to Watching Phone During Night">
+  <option value="Dont Send Good Morning, Good Night, Festival Messages | Shanghai News Alert">
+  <option value="Japan Keeps Islam At Bay">
+  <option value="Finger Prints Extracted From Selfies">
+  <option value="GST Implementation Date Extended to September 2017">
+  <option value="WhatsApp New Colors">
+  <option value="Modi Laptop For Every Student">
+  <option value="Eating Chicken With Milk Leaves White Spots On Skin">
+  <option value="Rohypnol Rape Drug | A Sterilization Pill">
+  <option value="Free Cancer Treatment | Prince Aly Khan Hospital">
+  <option value="Central Government To Issue Pink Slip To 5 Lakh Employees">
+  <option value="Vijay Mallya 35 Crores Cheque to BJP">
+  <option value="Microsoft School Do Not Give Electronic Instruments to Kids Below 12 Years">
+  <option value="LPG Gas Cylinder Expiry Date">
+  <option value="Rs. 2000 Notes Systematically Pulled Out of Circulation">
+  <option value="Income Returns Required For Accidental Death Compensation">
+  <option value="Letter Attributed To Cabinet Secretary On Aadhaar Linking To Land Records">
+  <option value="Kiddle Browser From Google For Kids">
+  <option value="Zakir Naik Having Iftaar With Masood Azhar">
+  <option value="Pradhan Mantri Laptop Vitran Yojna">
+  <option value="Malaysian Airlines Crash Video Is A Virus">
+  <option value="Anwar Jitou Facebook Account is A Hacker">
+  <option value="Free 5000 Scholarship For Every Student">
+  <option value="What Do Numbers on Bottom Of Bottles Indicate">
+  <option value="Fake Rupees 500 Notes">
+  <option value="Worlds Largest Python Swallowed 200 People And Thousands of Animals">
+  <option value="Red Bull Drink Has Bull Sperm">
+  <option value="Azan From Locked Mosque In America">
+  <option value="Bird Hiding Its Face While Drinking Water">
+  <option value="Double GST for Credit/Debit Card Transactions">
+  <option value="Flipkart GST Sale Offers">
+  <option value="Shah Rukh Khan Donates 45 Crores To Pakistan Gas Tanker Accident Victims">
+  <option value="Accident at Rithala Metro Due To Rain and Electric Shock">
+  <option value="Amazon GST Sale Offers">
+  <option value="Kader Khan is Dead">
+  <option value="Goatman Scare in India">
+  <option value="Priyank Gupta Aged 20 At Indore Hospital">
+  <option value="Man Sentenced To Death For Farting In Mosque During Ramadan">
+  <option value="Isha Ambani With Her 90 Crores Dress">
+  <option value="Woman Gives Birth After Sex With Family Dog?">
+  <option value="The Holy Quran Will Be Burnt On Next Saturday">
+  <option value="Petrol Pump Scam, Money Lost Every Visit?">
+  <option value="Cancer-Causing Benzene in Automobiles">
+  <option value="Narayana Murthy About Narendra Modi">
+  <option value="Tata Hospital Mumbai 56 Girls Died |Sanitary Pad Warning">
+  <option value="Indian Flag on Israel??s Parliament">
+  <option value="Tej Pratap Yadav Received Doctorate Degree">
+  <option value="Alligator Eats Girl Taking Photograph">
+  <option value="Picture Of Jesus On Sandals Supplied Free In Gujarat">
+  <option value="Split Bill While Shopping to Save GST">
+  <option value="worldnewsdailyreport.com Is Satire Website">
+  <option value="Jayden K Smith Facebook Account is A Hacker">
+  <option value="Syrian Kid Sleeping Between His Parents">
+  <option value="Kingfisher Beer Powder Mix">
+  <option value="Aspartame Is A Sweet Poison">
+  <option value="Kolkata, Siliguri on RED ALERT">
+  <option value="Nine Banks Will Be Closed Permanently By RBI">
+  <option value="Indians Have Most Confidence In Government">
+  <option value="Fire Rainbow at Mumbai Airport">
+  <option value="First Fully Solar Powered Train By India">
+  <option value="Pepsi After Polo or Mentos Leads to Instant Death">
+  <option value="Coca Colas Ad Says Dont Drink Coke">
+  <option value="Man Electrocuted Fingers Cut for Supporting Modi">
+  <option value="Plane with Landing Gear Failure Saved by Truck">
+  <option value="Check Microwave Radiation Leak With Mobile Phone">
+  <option value="Daisy the Golden Retriever Rescued People On 9/11">
+  <option value="Gorkhaland | 30th State Of India">
+  <option value="Oracle Developed 4D Sound">
+  <option value="Popcorn Carnival Link is Blue Whale Challenge">
+  <option value="Rupees 100 and 50 Currency To Close Today Midnight">
+  <option value="A Major Storm Hitting Bangalore, Sep 2017 | CAFWA Team">
+  <option value="Rukmavva Kidiyappanavar, 22 Yrs Girl Missing from Bangalore">
+  <option value="200 Terrorists Entered Punjab by Gurdaspur Border">
+  <option value="Prime Minister Modi Tweeted about death of Playboy Founder Hugh Hefner">
+  <option value="Amazon Great Indian Festival Diwali Sale">
+  <option value="32GB Pendrive For Free (sandisksale.com)">
+  <option value="Flavored Methamphetamine OR Strawberry Quick">
+  <option value="Alagar Iyyengar, 64 Years Missing From Dasarahalli Since 05 Oct 2017">
+  <option value="India Has A Total Number of 5,79,092 VIPs">
+  <option value="JNU Girls Found In Boys Hostel">
+  <option value="Martinelli link is Blue Whale Challenge">
+  <option value="Dhruv Verma, 14 Yrs, Boy Missing from Airoli, Navi Mumbai">
+  <option value="Heavy Rains Cause Kommaghatta lake to Overflow">
+  <option value="PAYTM FREE MONEY 1000-100000 (paytm.free-cash-offer.in)">
+  <option value="WHATSAPP TO BECOME A PAID APPLICATION">
+  <option value="Poisonous Indoor Plant- Dieffenbachia">
+  <option value="FAKE 2000 RUPEE NOTES IN INDIA">
+  <option value="India Has A Total Number of 5,79,092 VIPs">
+  <option value="ISIS Terrorists Hoax">
+  <option value="BREAKING NEWS FOR ALL JIO USERS">
+  <option value="[OPINION] Beti Bachao Beton Ko Padao">
+  <option value="Amazon Great Indian Sale">
+  <option value="FREE HIGH SPEED JIO NET">
+  <option value="Free Mini Laptops by PM Modi">
+  <option value="Adidas Giving Away Free Pair of Shoes">
+  <option value="Dr. P.V. Gangadharan About Cancer">
+  <option value="RBI Freezes PNB Accounts Till Further Notice">
+  <option value="Sylvester Gardenzio Stallone Died">
+  <option value="JIO Phones Free For First 5 Million User">
+  <option value="Paytm Cash 1000 for 4 Right Answers">
+  <option value="Dominos Using Fake Cheese As Per BBC Report">
+  <option value="Sara Tendulkar Becomes a Singing Sensation">
+  <option value="200 Children Kidnappers Have Arrived Bangalore">
+  <option value="Fake Promotions & Offers Circulating on Social Media">
+  <option value="Amul Kulfi Has Pig Contents">
+  <option value="D-Mart is Giving Free INR2500 Voucher">
+  <option value="Karnataka Police Warning about Windshield Attack with Egg">
+  <option value="Cadbury India Is Giving Free Chocolates">
+  <option value="Woman Killed Husband With Crushed Apple Seeds">
+  <option value="Online Hacker Breached Android, Adds Contact UIDAI">
+</datalist>
+
+<div class="divclr"> 
+  <a onclick="doclear()" href="#" style="text-align:right">clear</a>
+  <a>&nbsp;&nbsp;&nbsp;</a>
+  <a id="sug" onclick="togglesuggestions()" href="#" align="left">suggestions:off</a>
+</div>
+<!-- <div class="divclr"><a onclick="doclear()" href="#"><font size="1">clear text</font></a></div> -->
+<br>
+<input align="center" id="myButton" type="button" class="Button" onclick="dosearch()" value="Search Fact Checking Websites">
+<script>
+  var urlParams = new URLSearchParams(window.location.search);
+  var text = urlParams.get('q');
+  if (text !== null) document.getElementById("inputtextnew").value=text;    
+  if (text !== null) document.getElementById("inputtext").value=text;
+  
+</script>
+<script>
+var input1 = document.getElementById("inputtextnew");
+input1.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("myButton").click();
+    }
+});    
+var input2 = document.getElementById("inputtext");
+input2.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("myButton").click();
+    }
+});
+</script>
+
+<script>
+  function dosearch() {
+    var x;
+    var text;
+    if (document.getElementById("inputtext").style.display == "") 
+    {
+      x = document.getElementById("inputtext");
+      text = "";
+      text = x.value;
+    } else
+    if (document.getElementById("inputtextnew").style.display == "") 
+    {
+      x = document.getElementById("inputtextnew");
+      text = "";
+      text = x.value;
+    }
+    location.href = 'https://nokiye.com?q='+text;
+    x.value=text;
+   }
+</script>
+
+<script>
+  function doclear () {
+    document.getElementById("inputtext").value="";
+    document.getElementById("inputtextnew").value="";
+  }
+</script>
+
+<script>
+  function togglesuggestions () {
+    var x = document.getElementById("sug");
+    if (x.innerHTML=="suggestions:off") 
+    {
+      x.innerHTML="suggestions: on";
+      document.getElementById("inputtextnew").style.display="";      
+      document.getElementById("inputtext").style.display="none";
+    }
+    else
+    {
+      if (x.innerHTML=="suggestions: on") x.innerHTML="suggestions:off";
+      document.getElementById("inputtext").style.display="";      
+      document.getElementById("inputtextnew").style.display="none";
+    }
+  }
+</script>
+
+<!--
+<script>
+    var x = document.getElementById("inputtext");
+    window.onload = xfunction () {
+      var urlParams = new URLSearchParams(window.location.search);
+      var text = urlParams.get('q');
+      window.alert(text);
+      if (text !== null) $('#inputtext').val(text);
+    }
+</script>
+-->
+
+<br> <br>
+<div align="left" class="row">
+    <gcse:searchresults-only resultsUrl="nokiye.com?q=test"></gcse:searchresults-only>
+</div>
+</div> <!-- container div -->
+<div> <br> <br> </div>
+  <footer>
+    <p>
+      <font size="1">Contact us at info@check4spam.com</font>
+      <br>
+      <font size="1">Site powered by <a href="https://check4spam.com" target="_blank">Check4Spam</a></font>
+    </p>
+  </footer>
+</body>
+</html>
