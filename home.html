@@ -73,65 +73,65 @@ a {
   text-decoration: none;
 }
 
-.TextInput { 
-x: 77px; 
-y: 294px; 
-width: 75%; 
-height: 42px; 
-color: #000000; 
-font-family: 'Tahoma'; 
-font-size: 16px; 
-font-weight: normal; 
-font-style: normal; 
-text-decoration: none; 
-text-align: left; 
+.TextInput {
+x: 77px;
+y: 294px;
+width: 75%;
+height: 42px;
+color: #000000;
+font-family: 'Tahoma';
+font-size: 16px;
+font-weight: normal;
+font-style: normal;
+text-decoration: none;
+text-align: left;
 align: center;
-padding: 5px; 
-background: #FFFFFF; 
-border: 1px solid #CCCCCC; 
-border-radius: 5px; 
+padding: 5px;
+background: #FFFFFF;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
 box-shadow: 1px 1px 5px grey;
 }
 
-.Button { 
-x: 459px; 
-y: 304px; 
-width: auto; 
-height: 40px; 
-color: grey; 
-font-family: 'Tahoma'; 
-font-size: 12px; 
-font-weight: normal; 
-font-style: normal; 
-text-decoration: none; 
-text-align: center; 
-background: light grey; 
-border: 1px solid #DDDDDD; 
-border-radius: 3px; 
+.Button {
+x: 459px;
+y: 304px;
+width: auto;
+height: 40px;
+color: grey;
+font-family: 'Tahoma';
+font-size: 12px;
+font-weight: normal;
+font-style: normal;
+text-decoration: none;
+text-align: center;
+background: light grey;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
 }
 
 .Button:hover {
-color: #000000; 
+color: #000000;
 box-shadow: 1px 1px 1px grey;
-border: 1px solid grey; 
+border: 1px solid grey;
 
 }
-.divclr, .divsug { 
+.divclr, .divsug {
   margin-left:  auto;
   margin-right:  auto;
-  x: 77px; 
-  y: 294px; 
-  width: 75%; 
-  height: 15px; 
-  color: #000000; 
-  font-family: 'Monospace'; 
-  font-size: 12px; 
-  font-weight: normal; 
-  font-style: normal; 
-  text-decoration: none; 
-  text-align: right; 
-  padding: 5px; 
-  border: 0; 
+  x: 77px;
+  y: 294px;
+  width: 75%;
+  height: 15px;
+  color: #000000;
+  font-family: 'Monospace';
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  text-align: right;
+  padding: 5px;
+  border: 0;
 }
 td1 {
   align: left;
@@ -684,7 +684,7 @@ img {
   <option value="Online Hacker Breached Android, Adds Contact UIDAI">
 </datalist>
 
-<div class="divclr"> 
+<div class="divclr">
   <a onclick="doclear()" href="#" style="text-align:right">clear</a>
   <a>&nbsp;&nbsp;&nbsp;</a>
   <a id="sug" onclick="togglesuggestions()" href="#" align="left">suggestions:off</a>
@@ -695,9 +695,9 @@ img {
 <script>
   var urlParams = new URLSearchParams(window.location.search);
   var text = urlParams.get('q');
-  if (text !== null) document.getElementById("inputtextnew").value=text;    
+  if (text !== null) document.getElementById("inputtextnew").value=text;
   if (text !== null) document.getElementById("inputtext").value=text;
-  
+
 </script>
 <script>
 var input1 = document.getElementById("inputtextnew");
@@ -706,7 +706,7 @@ input1.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         document.getElementById("myButton").click();
     }
-});    
+});
 var input2 = document.getElementById("inputtext");
 input2.addEventListener("keyup", function(event) {
     event.preventDefault();
@@ -720,13 +720,13 @@ input2.addEventListener("keyup", function(event) {
   function dosearch() {
     var x;
     var text;
-    if (document.getElementById("inputtext").style.display == "") 
+    if (document.getElementById("inputtext").style.display == "")
     {
       x = document.getElementById("inputtext");
       text = "";
       text = x.value;
     } else
-    if (document.getElementById("inputtextnew").style.display == "") 
+    if (document.getElementById("inputtextnew").style.display == "")
     {
       x = document.getElementById("inputtextnew");
       text = "";
@@ -747,16 +747,16 @@ input2.addEventListener("keyup", function(event) {
 <script>
   function togglesuggestions () {
     var x = document.getElementById("sug");
-    if (x.innerHTML=="suggestions:off") 
+    if (x.innerHTML=="suggestions:off")
     {
       x.innerHTML="suggestions: on";
-      document.getElementById("inputtextnew").style.display="";      
+      document.getElementById("inputtextnew").style.display="";
       document.getElementById("inputtext").style.display="none";
     }
     else
     {
       if (x.innerHTML=="suggestions: on") x.innerHTML="suggestions:off";
-      document.getElementById("inputtext").style.display="";      
+      document.getElementById("inputtext").style.display="";
       document.getElementById("inputtextnew").style.display="none";
     }
   }
@@ -786,6 +786,9 @@ input2.addEventListener("keyup", function(event) {
       <br>
       <font size="1">Site powered by <a href="https://check4spam.com" target="_blank">Check4Spam</a></font>
     </p>
+    <div class="social">
+      <a href="https://fb.me/nokiyeofficial"  target="_blank"><img src="images/facebook-icon-1-300x300.png" alt="fb.me/nokiyeofficial" height="42" width="42" style="float: center"></a>
+    </div>
   </footer>
 </body>
 </html>
